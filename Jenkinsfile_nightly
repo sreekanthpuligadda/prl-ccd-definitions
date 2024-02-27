@@ -59,7 +59,7 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
 
 withNightlyPipeline("nodejs", product, component) {
     env.TEST_URL = params.XUI_WEB_URL
-    env.test_environment = params.RUNNING_ENV
+    env.ENVIRONMENT = params.ENVIRONMENT
     env.TESTS_FOR_ACCESSIBILITY = true
 
     loadVaultSecrets(secrets)
