@@ -58,6 +58,7 @@
     "minimist": "^1.2.3",
     "playwright": "1.37.0",
     "puppeteer": "^22.0.0",
+    "url": "^0.11.3",
     "ws": "^7.4.6"
   },
   "devDependencies": {
