@@ -9,12 +9,13 @@ module.exports = {
   fields: {
     submit: 'button[type="submit"]',
     returnToTaskTab: 'div > div.govuk-form-group.govuk-form-group--error > a',
-    assignTaskToMe: '//exui-case-task/p/strong[contains(text(), "Send to Gatekeeper")]/../../dl/div[4]//dd/a[3]',
+    assignTaskToMe: '//exui-case-task/p/strong[contains(text(), "Send to Gatekeeper")]/../../dl/div[4]//dd/a',
     gateKeeperTask: '//a[contains(.,"Send To Gatekeeper")]',
     selectGateKeeperOption: '#isSpecificGateKeeperNeeded_No'
   },
 
   async moveCaseToGateKeeping() {
+    global.logCallingFunction();
     await I.retry(retryCount).triggerEvent('Send to gatekeeper');
     await I.wait(longWait);
     await I.retry(retryCount).click(this.fields.returnToTaskTab);
